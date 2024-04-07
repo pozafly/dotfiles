@@ -3,13 +3,15 @@ export PATH=/opt/homebrew/bin:$PATH
 
 plugins=(
   git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
 )
 
 # oh-my-zsh path, init
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
+
+# autosuggestions, syntax-highlighting
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # pure theme
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
