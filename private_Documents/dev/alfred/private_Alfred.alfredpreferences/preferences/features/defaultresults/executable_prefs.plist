@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fallbacks</key>
+	<array>
+		<string>features.websearch.google.fallback</string>
+		<string>features.websearch.custom.C07577DA-A650-47C4-A9C8-CBAFDAA6FDA4.fallback</string>
+		<string>features.websearch.custom.F1CD4D43-C852-43D5-9E08-F7E95AC77F76.fallback</string>
+		<string>features.websearch.youtube.fallback</string>
+	</array>
+	<key>showArchives</key>
+	<true/>
+	<key>showDocuments</key>
+	<true/>
+	<key>showFolders</key>
+	<true/>
+	<key>showTextFiles</key>
+	<true/>
+</dict>
+</plist>
