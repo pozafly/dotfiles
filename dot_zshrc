@@ -3,6 +3,7 @@ export PATH=/opt/homebrew/bin:$PATH
 
 plugins=(
   git
+  encode64
 )
 
 # oh-my-zsh path, init
