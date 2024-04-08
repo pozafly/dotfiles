@@ -1,0 +1,29 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# If Homebrew is not installed on the system, it will be installed here
+if test ! $(which brew); then
+   printf '\n\n\e[33mHomebrew not found. \e[0mInstalling Homebrew...'
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+else
+  printf '\n\n\e[0mHomebrew found. Continuing...'
+fi
+
+# If Oh-my-zsh is not installed on the system, it will be installed here
+if [ ! -d $HOME/.oh-my-zsh ]; then
+  printf '\n\n\e[33mOh-my-zsh not found. \e[0mInstalling Oh-my-zsh...'
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+  printf '\n\n\e[0mOh-my-zsh found. Continuing...'
+fi
+
+# Update homebrew packages and apps
+#printf '\nInitiating Homebrew update...\n'
+#brew tap homebrew/cask-fonts
+#brew tap daipeihust/tap
+#brew tap koekeishiya/formulae
+
+#printf '\n\nInstalling App Store apps...\n'
+#mas list | awk '{print $1}' | xargs -I % mas install %
+
+{{- end -}}
