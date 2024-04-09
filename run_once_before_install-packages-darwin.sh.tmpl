@@ -17,13 +17,10 @@ else
   printf '\n\n\e[0mOh-my-zsh found. Continuing...'
 fi
 
-# Update homebrew packages and apps
-#printf '\nInitiating Homebrew update...\n'
-#brew tap homebrew/cask-fonts
-#brew tap daipeihust/tap
-#brew tap koekeishiya/formulae
+chezmoi init --apply pozafly
 
-#printf '\n\nInstalling App Store apps...\n'
-#mas list | awk '{print $1}' | xargs -I % mas install %
+# Update homebrew packages and apps
+printf '\nInitiating Homebrew update...\n'
+brew bundle --no-lock --file="~/.local/share/chezmoi/Brewfile" 
 
 {{- end -}}
