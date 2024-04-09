@@ -9,3 +9,6 @@
 
 설치 스크립트 실행 명령어
 - $ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply pozafly
+
+dotfiles 만들기 (https://blog.appkr.dev/work-n-play/dotfiles/)
+- brew bundler 등
