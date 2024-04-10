@@ -20,4 +20,4 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # fnm
-eval "$(fnm env --use-on-cd)"
+# eval "$(fnm env --use-on-cd)"
