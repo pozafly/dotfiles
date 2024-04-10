@@ -21,6 +21,9 @@ chezmoi init --apply pozafly
 
 # Update homebrew packages and apps
 printf '\nInitiating Homebrew update...\n'
-brew bundle --no-lock --file="~/.local/share/chezmoi/Brewfile" 
+brew bundle --no-lock --file="~/.local/share/chezmoi/Brewfile"
 
+# Update macOS settings
+printf '\nInitiating macOS update...\n'
+sh .macos
 {{ end -}}
