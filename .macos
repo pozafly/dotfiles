@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+# ~/.macos — https://mths.be/macos
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+## sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+## while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+
+# 참고
+## defaults - https://macos-defaults.com/
+
+## 핫키는 따로 설정해야 함.
+## https://github.com/diimdeep/dotfiles/blob/master/osx/configure/hotkeys.sh 여길 참고하시길
+
+
+# 독 설정
+# 독 아이콘 크기 45
+defaults write com.apple.dock "tilesize" -int "45"
+
+# Finder 설정
+# 파일 확장자 모두 표시
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+# 하단 위치 표시줄 표시
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+# 하단 상태 표시줄 표시
+defaults write com.apple.finder "ShowStatusBar" -bool "true"
+
+# 자동 격자 정렬
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+
+# 트랙패트 설정
+# 세 손가락 드래그로 드래그 활성화
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerDrag" -bool "true"
+# 한 손가락으로 탭하여 클릭하기
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# 트랙패드 스피드 (가장 빠르게)
+defaults write -g com.apple.trackpad.scaling 3
+
+
+# 키보드 설정
+# 자동으로 대문자 시작안함
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+# 코드를 입력할 때 귀찮아서 스마트 대시 사용 안 함
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# 자동 수정 안함
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# 키 반복 지연 시간 제일 빠르게
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+# 키 반복 속도 제일 빠르게
+defaults write NSGlobalDomain KeyRepeat -int 2
+
+
+# 컨트롤센터
+defaults -currentHost write com.apple.controlcenter WiFi -int 2 # 끌때는 8임
+defaults -currentHost write com.apple.controlcenter Battery -int 2
+defaults -currentHost write com.apple.controlcenter Bluetooth -int 2
+# defaults write com.apple.controlcenter "NSStatusItem Visible Clock" -int 0 # 안먹힘
+# 배터리 잔량 표시
+defaults -currentHost write com.apple.controlcenter.plist BatteryShowPercentage -bool true
+# defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true  # 동일함.
+
+
+# 메뉴바
+# 배터리 잔량 표시
+defaults write com.apple.menuextra.battery ShowPercent -int 1
+# 시계 아날로그 형식으로 바꾸기 (because itycal)
+defaults write com.apple.menuextra.clock IsAnalog -int 1
+# spotlight 메뉴바에서 감추기
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
+
+
+killall Dock
+killall Finder
+killall SystemUIServer
+killall ControlCenter
