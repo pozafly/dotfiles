@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
 # If Homebrew is not installed on the system, it will be installed here
@@ -23,4 +23,4 @@ chezmoi init --apply pozafly
 printf '\nInitiating Homebrew update...\n'
 brew bundle --no-lock --file="~/.local/share/chezmoi/Brewfile" 
 
-{{- end -}}
+{{ end -}}
