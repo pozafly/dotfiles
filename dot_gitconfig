@@ -8,3 +8,4 @@
 	editor = code --wait
 	precomposeunicode = true
 	quotepath = false
+	excludesFile = /Users/hwangsuntae/.gitignore
