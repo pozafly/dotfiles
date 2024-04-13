@@ -2,8 +2,8 @@
 st = status
 
 [user]
-name = pozafly
-email = pozafly@gmail.com
+name = {{ .chezmoi.config.data.name | quote }}
+email = {{ .chezmoi.config.data.email | quote }}
 
 [core]
 editor = code --wait
