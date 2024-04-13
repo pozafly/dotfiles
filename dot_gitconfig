@@ -1,8 +1,9 @@
 [alias]
 	st = status
 [user]
-	name = pozafly
+	name = {{ .github.user | quote }}
 	email = pozafly@gmail.com
+	token = {{ keyring "github" .github.user | quote }}
 [core]
 	editor = code --wait
 	precomposeunicode = true
