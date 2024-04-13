@@ -1,3 +1,13 @@
 README.md
-private_Library
-private_Library/**/*.plist
+
+<!-- ./Library/Preferences -->
+
+plists/com.apple.symbolichotkeys.plist
+plists/com.googlecode.iterm2.plist
+plists/com.lwouis.alt-tab-macos.plist
+plists/com.mowglii.ItsycalApp.plist
+plists/com.pilotmoon.scroll-reverser.plist
+plists/wang.jianing.app.OpenInEditor-Lite.plist
+plists/wang.jianing.app.OpenInTerminal-Lite.plist
+
+<!-- plists -->
