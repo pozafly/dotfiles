@@ -1,0 +1,19 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $name := promptStringOnce . "name" "Name" -}}
+
+[edit]
+  command = "code"
+  args = ["--wait"]
+
+# plist diff을 보여줄 때 바이너리가 아닌, xml로 보여줌
+[[textconv]]
+  pattern = "**/*.plist"
+  command = "plutil"
+  args = ["-convert", "xml1", "-o", "-", "-"]
+
+[git]
+  autoCommit = true
+
+[data]
+  email = {{ $email | quote }}
+  name = {{ $name | quote }}
