@@ -1,0 +1,15 @@
+[alias]
+st = status
+
+[user]
+name = pozafly
+email = pozafly@gmail.com
+
+[core]
+editor = code --wait
+precomposeunicode = true
+quotepath = false
+excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
+
+[pull]
+rebase = true
