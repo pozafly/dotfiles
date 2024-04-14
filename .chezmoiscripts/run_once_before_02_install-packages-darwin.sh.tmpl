@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# plist 관리
+
+# /private_Library/private_Preferences 에 존재하는 plist 파일 이름을 가져와서
+# /Library/Preferences로 덮어씀(복사).
+for file in {{ .chezmoi.sourceDir }}/private_Library/private_Preferences/*.plist; do
+    # 파일이 심볼릭 링크인지 확인하고, 심볼릭 링크라면 건너뜀
+    if [ -L "$file" ]; then
+        continue
+    fi
+
+    # 파일 이름 추출
+    filename=$(basename "$file")
+
+    # 파일을 /Library/Preferences로 복사
+    cp "$file" {{ .chezmoi.homeDir }}"/Library/Preferences/$filename"
+done
+
+printf '\nbefore install package 02 Done!!\n'
