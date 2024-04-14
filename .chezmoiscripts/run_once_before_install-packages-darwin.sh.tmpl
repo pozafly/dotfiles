@@ -21,7 +21,7 @@ chezmoi init --apply pozafly
 
 # Update homebrew packages and apps
 printf '\nInitiating Homebrew update...\n'
-brew bundle --no-lock --file="~/.local/share/chezmoi/Brewfile"
+brew bundle --no-lock --file="{{ .chezmoi.sourceDir }}/Brewfile"
 
 # Install age dependency
 if which age > /dev/null; then
@@ -34,6 +34,16 @@ fi
 
 # Update macOS settings
 printf '\nInitiating macOS update...\n'
-sh ~/.local/share/chezmoi/.macos
+sh {{ .chezmoi.sourceDir }}/.macos
+
+# Documents/dev settings
+if [ ! -d $HOME/Documents/dev ]; then
+  printf '\n\n\e[33mHome/Documents/dev \e[0mInstalling Home/Documents/dev...'
+  mkdir {{ .chezmoi.homeDir }}/Documents/dev
+else
+  printf '\n\n\e[0mHome/Documents/dev found. Continuing...'
+fi
+
+printf '\nAll Done!!\n'
 
 {{ end -}}
