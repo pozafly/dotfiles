@@ -10,6 +10,10 @@
   precomposeunicode = true
   quotepath = false
   excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
+  autocrlf = input
 
 [pull]
   rebase = true
+
+[init]
+  defaultBranch = main
