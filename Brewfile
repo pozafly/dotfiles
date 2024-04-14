@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+brew "age"
 brew "chezmoi"
 brew "fnm"
 brew "git"

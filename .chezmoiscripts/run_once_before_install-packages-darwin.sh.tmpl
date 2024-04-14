@@ -23,6 +23,15 @@ chezmoi init --apply pozafly
 printf '\nInitiating Homebrew update...\n'
 brew bundle --no-lock --file="~/.local/share/chezmoi/Brewfile"
 
+# Install age dependency
+if which age > /dev/null; then
+  echo "[!] 'age' is already installed. Skip installation."
+else
+  echo "[!] 'age' is not installed. Start installation."
+  brew install age
+  echo "[+] Successfully installed 'age'."
+fi
+
 # Update macOS settings
 printf '\nInitiating macOS update...\n'
 sh ~/.local/share/chezmoi/.macos
