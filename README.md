@@ -68,4 +68,4 @@ encryption = "age"
 ```
 
 그리고 git ssh 비밀키를 암호화 하자.
-`$ chezmoi add --encrypt ~/.ssh/id_ed25519`
+`$ chezmoi add --encrypt ~/.ssh/id_ed25519` 그러면 `encrypted_private_id_ed25519.age` 파일이 dot_config/private_dot_ssh 경로에 생성된다. 이 비밀 키는 아까 생성한 age-key.txt로 복호화 할 수 있다.

@@ -1,0 +1,4 @@
+Host pozafly
+  HostName gihub.com
+  User git
+  Identityfile ~/.ssh/id_ed25519
