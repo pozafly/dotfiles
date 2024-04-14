@@ -1,6 +1,13 @@
 README.md
-plists/com.apple.symbolichotkeys.plist
-plists/com.googlecode.iterm2.plist
-plists/com.lwouis.alt-tab-macos.plist
-plists/com.mowglii.ItsycalApp.plist
-plists/com.pilotmoon.scroll-reverser.plist
+
+# com.apple.symbolichotkeys.plist
+
+# com.googlecode.iterm2.plist
+
+# com.lwouis.alt-tab-macos.plist
+
+# com.mowglii.ItsycalApp.plist
+
+# com.pilotmoon.scroll-reverser.plist
+
+/Library/Preferences
