@@ -1,15 +1,15 @@
 [alias]
-st = status
+  st = status
 
 [user]
-name = {{ .chezmoi.config.data.name | quote }}
-email = {{ .chezmoi.config.data.email | quote }}
+  name = {{ .chezmoi.config.data.name | quote }}
+  email = {{ .chezmoi.config.data.email | quote }}
 
 [core]
-editor = code --wait
-precomposeunicode = true
-quotepath = false
-excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
+  editor = code --wait
+  precomposeunicode = true
+  quotepath = false
+  excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
 
 [pull]
-rebase = true
+  rebase = true
