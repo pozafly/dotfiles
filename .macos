@@ -31,6 +31,8 @@ defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
 defaults write com.apple.finder "ShowPathbar" -bool "true"
 # 하단 상태 표시줄 표시
 defaults write com.apple.finder "ShowStatusBar" -bool "true"
+# 파인더 아이콘뷰 보기
+defaults write com.apple.finder "FXPreferredViewStyle" -string "icnv"
 
 # 자동 격자 정렬
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -85,3 +87,4 @@ killall Dock
 killall Finder
 killall SystemUIServer
 killall ControlCenter
+sudo pkill loginwindow
