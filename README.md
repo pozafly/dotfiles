@@ -2,6 +2,7 @@
 
 - https://songkg7.github.io/posts/chezmoi-awesome-dotfile-manager/
 - https://www.chezmoi.io/
+- https://github.com/narze/dotfiles(예시)
 
 암호화 참고
 
