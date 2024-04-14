@@ -18,7 +18,7 @@ for file in ~/.local/share/chezmoi/private_Library/private_Preferences/*.plist; 
     # 파일 이름 추출
     filename=$(basename "$file")
 
-    new_filename=$(echo "$filename" | sed 's/private_//')
+    new_filename=$(echo "$filename" | sed 's/^private_//')
 
     # 파일을 /Library/Preferences로 복사
     chezmoi add "~/Library/Preferences/$new_filename"
