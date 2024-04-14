@@ -13,8 +13,11 @@ for file in {{ .chezmoi.sourceDir }}/private_Library/private_Preferences/*.plist
     # 파일 이름 추출
     filename=$(basename "$file")
 
+    new_filename=$(echo "$filename" | sed 's/^private_//')
+    echo 'new_filename' $new_filename
+
     # 파일을 /Library/Preferences로 복사
-    cp "$file" {{ .chezmoi.homeDir }}"/Library/Preferences/$filename"
+    cp "$file" {{ .chezmoi.homeDir }}"/Library/Preferences/$new_filename"
 done
 
 printf '\nbefore install package 02 Done!!\n'
