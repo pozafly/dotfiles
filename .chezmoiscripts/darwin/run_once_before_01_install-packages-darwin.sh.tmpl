@@ -1,4 +1,3 @@
-{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
 # If Homebrew is not installed on the system, it will be installed here
@@ -32,10 +31,6 @@ else
   echo "Successfully installed 'age'."
 fi
 
-# Update macOS settings
-printf '\nInitiating macOS update...\n'
-sh {{ .chezmoi.sourceDir }}/.macos
-
 # Documents/dev settings
 if [ ! -d $HOME/Documents/dev ]; then
   printf '\n\n\e[33mHome/Documents/dev \e[0mInstalling Home/Documents/dev...'
@@ -45,5 +40,3 @@ else
 fi
 
 printf '\nbefore install package 01 Done!!\n'
-
-{{ end -}}
