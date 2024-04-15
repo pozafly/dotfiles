@@ -29,12 +29,4 @@ else
   echo "Successfully installed 'age'."
 fi
 
-# Documents/dev settings
-if [ ! -d $HOME/Documents/dev ]; then
-  printf '\n\n\e[33mHome/Documents/dev \e[0mInstalling Home/Documents/dev...'
-  mkdir {{ .chezmoi.homeDir }}/Documents/dev
-else
-  printf '\n\n\e[0mHome/Documents/dev found. Continuing...'
-fi
-
 printf '\nbefore install package 01 Done!!\n'

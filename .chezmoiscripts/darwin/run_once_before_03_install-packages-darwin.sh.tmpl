@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Documents/dev settings
+if [ ! -d $HOME/Documents/dev ]; then
+  printf '\n\n\e[33mHome/Documents/dev \e[0mInstalling Home/Documents/dev...'
+  mkdir {{ .chezmoi.homeDir }}/Documents/dev
+else
+  printf '\n\n\e[0mHome/Documents/dev found. Continuing...'
+fi
+
 git clone git@github.com:pozafly/TIL.git ~/Documents/dev/TIL
 git clone git@github.com:pozafly/github-blog-source.git ~/Documents/dev/github-blog-source
 
