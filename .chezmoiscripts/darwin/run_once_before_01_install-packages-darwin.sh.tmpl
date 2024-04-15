@@ -16,8 +16,6 @@ else
   printf '\n\n\e[0mOh-my-zsh found. Continuing...'
 fi
 
-chezmoi init --apply pozafly
-
 # Update homebrew packages and apps
 printf '\nInitiating Homebrew update...\n'
 brew bundle --no-lock --file="{{ .chezmoi.sourceDir }}/Brewfile"
