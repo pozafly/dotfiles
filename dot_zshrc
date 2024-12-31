@@ -24,3 +24,6 @@ eval "$(fnm env --use-on-cd)"
 
 # oh-my-zsh auto update
 DISABLE_UPDATE_PROMPT=true
+
+# neofetch
+neofetch --ascii_distro Trisquel
