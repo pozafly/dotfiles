@@ -1,3 +1,8 @@
+encryption = "age"
+[age]
+  identity = "{{ .chezmoi.homeDir }}/age-key.txt"
+  recipient = "age1k3dd5wtylpz6um3wz2sgyr6ek0zn4mvc8mknaf9tjdjxh7n953psf8gw40"
+
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $name := promptStringOnce . "name" "Name" -}}
 {{- $env := promptStringOnce . "env" "env (예: home | work)" -}}
@@ -6,11 +11,6 @@
   email = {{ $email | quote }}
   name = {{ $name | quote }}
   env = {{ $env | quote }}
-
-encryption = "age"
-[age]
-  identity = "{{ .chezmoi.homeDir }}/age-key.txt"
-  recipient = "age1k3dd5wtylpz6um3wz2sgyr6ek0zn4mvc8mknaf9tjdjxh7n953psf8gw40"
 
 [edit]
   command = "code"
