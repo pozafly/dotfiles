@@ -1,14 +1,12 @@
 theme = Snazzy
-# theme = Dracula
 font-family = Monaco
 font-size = 13
 cursor-style = block
-# macos-titlebar-style = tabs
+window-padding-x = 10
+window-padding-y = 10
 window-padding-balance = true
-# window-colorspace = "display-p3"
 background-opacity = 0.9
 background-blur-radius = 40
-# gtk-titlebar = false
 
-window-width = 82
-window-height = 26
+window-width = 86
+window-height = 28
