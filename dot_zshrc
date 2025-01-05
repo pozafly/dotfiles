@@ -1,6 +1,9 @@
 # homebrew path
 export PATH=/opt/homebrew/bin:$PATH
 
+# oh-my-zsh auto update
+zstyle ':omz:update' mode auto
+
 plugins=(
   git
   encode64
@@ -21,9 +24,6 @@ prompt pure
 
 # fnm
 eval "$(fnm env --use-on-cd)"
-
-# oh-my-zsh auto update
-DISABLE_UPDATE_PROMPT=true
 
 # neofetch
 neofetch --ascii_distro Trisquel
