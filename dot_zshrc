@@ -25,8 +25,9 @@ prompt pure
 # fnm
 eval "$(fnm env --use-on-cd)"
 
-# neofetch
-neofetch --ascii_distro Trisquel
+# fastfetch
+fastfetch --logo XeroArch
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/pozafly/.docker/completions $fpath)
 autoload -Uz compinit
