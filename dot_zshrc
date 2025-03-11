@@ -20,6 +20,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # pure theme
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
+PURE_CMD_MAX_EXEC_TIME=0
 prompt pure
 
 # fnm
@@ -28,8 +29,8 @@ eval "$(fnm env --use-on-cd)"
 # fastfetch
 fastfetch --logo XeroArch
 
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+# Docker CLI
 fpath=(/Users/pozafly/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
-# End of Docker CLI completions
+
