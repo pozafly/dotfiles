@@ -1,4 +1,5 @@
-theme = Snazzy
+theme = custom
+#theme = Snazzy
 font-family = Monaco
 font-size = 13
 cursor-style = block
@@ -6,7 +7,9 @@ window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
 background-opacity = 0.9
-background-blur-radius = 40
+background-blur-radius = 80
 
 window-width = 86
 window-height = 28
+window-colorspace = display-p3
+font-thicken
