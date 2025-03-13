@@ -1,0 +1,201 @@
+{
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.confirmDelete": false,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.formatOnPaste": false,
+  "editor.linkedEditing": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "terminal.integrated.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "explorer.compactFolders": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "emmet.excludeLanguages": ["markdown"],
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default",
+    "*.plist": "default",
+    "*.tmpl": "default"
+  },
+  "terminal.integrated.defaultProfile.osx": "/bin/zsh (migrated)",
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE:",
+      "backgroundColor": "#EF6291"
+    },
+    {
+      "text": "TODO:"
+    },
+    {
+      "text": "REVIEW",
+      "backgroundColor": "#6eacd9"
+    }
+  ],
+  "todohighlight.defaultStyle": {
+    "color": "#fff",
+    "borderRadius": "2px"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.profiles.osx": {
+    "/bin/zsh (migrated)": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+  "git.autofetch": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "output.smartScroll.enabled": false,
+  "search.exclude": {
+    ".yarn/**": true,
+    "**/yarn.lock": true,
+    "package-lock.json": true
+  },
+  "workbench.colorTheme": "GitHub Dark",
+  "markdown.extension.completion.respectVscodeSearchExclude": false,
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "stylelint.snippet": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass",
+    "typescriptreact",
+    "typescript"
+  ],
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass",
+    "typescriptreact",
+    "typescript"
+  ],
+  "material-icon-theme.activeIconPack": "react",
+  "auto-close-tag.disableOnLanguage": [
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "git.openRepositoryInParentFolders": "never",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown"
+  ],
+  "files.associations": {
+    "*.tsx": "typescriptreact",
+    "*.ts": "typescript"
+  },
+  "svg.preview.mode": "svg",
+  // "prettier.singleQuote": true,
+  "workbench.sideBar.location": "right",
+  "gitlens.views.commitDetails.files.layout": "tree",
+  "scssFormatter.printWidth": 80,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.formatOnSave": true,
+  "http.proxySupport": "off",
+  "codeium.enableConfig": {
+    "*": true,
+    "ignore": true,
+    "plaintext": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "code-runner.executorMap": {
+    // NOTE: 많이 간추린 버전임.
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "python": "python3 -u",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "typescript": "ts-node",
+    "swift": "swift",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "dart": "dart",
+    "lisp": "sbcl --script",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "mojo": "mojo run",
+    "spwn": "spwn build"
+  },
+  "editor.tabSize": 2,
+  "workbench.editor.customLabels.patterns": {
+    // for next.js
+    "**/src/app/**/page.tsx": "${dirname} - Page",
+    "**/src/app/**/index.tsx": "${dirname} - Index",
+    "**/src/app/**/layout.tsx": "${dirname} - Layout",
+    "**/src/app/**/template.tsx": "${dirname} - Template",
+    "**/src/components/**/index.tsx": "${dirname} - Component"
+  },
+  "errorLens.excludeBySource": ["cSpell"],
+  "tailwind-fold.autoFold": false,
+  "terminal.integrated.env.osx": {},
+  "console-ninja.featureSet": "Community",
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    "pnpm-lock.yaml"
+  ],
+  "workbench.colorCustomizations": {
+    "terminal.foreground": "#f1f1f1",
+    "terminalCursor.foreground": "#28b9ff",
+    "terminalCursor.background": "#28b9ff",
+    "terminal.ansiBlack": "#121212",
+    "terminal.ansiRed": "#a52aff",
+    "terminal.ansiGreen": "#7129ff",
+    "terminal.ansiYellow": "#3d2aff",
+    "terminal.ansiBlue": "#2b4fff",
+    "terminal.ansiMagenta": "#2883ff",
+    "terminal.ansiCyan": "#28b9ff",
+    "terminal.ansiWhite": "#f1f1f1",
+    "terminal.ansiBrightBlack": "#666666",
+    "terminal.ansiBrightRed": "#ba5aff",
+    "terminal.ansiBrightGreen": "#905aff",
+    "terminal.ansiBrightYellow": "#657b83",
+    "terminal.ansiBrightBlue": "#5c78ff",
+    "terminal.ansiBrightMagenta": "#5ea2ff",
+    "terminal.ansiBrightCyan": "#5ac8ff",
+    "terminal.ansiBrightWhite": "#ffffff",
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.minimumContrastRatio": 1,
+    "terminal.integrated.fastScrollSensitivity": 2,
+    "terminal.integrated.smoothScrolling": false,
+    "terminal.integrated.experimentalRefreshOnResume": true
+  }
+}
