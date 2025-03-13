@@ -34,3 +34,5 @@ fpath=(/Users/pozafly/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 
+# fuck
+eval $(thefuck --alias)
