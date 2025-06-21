@@ -38,4 +38,4 @@ compinit
 eval $(thefuck --alias)
 
 # bat
-alias cat="bat"
+# alias cat="bat"
