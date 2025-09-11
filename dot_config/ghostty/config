@@ -1,15 +1,29 @@
 theme = custom
 #theme = Snazzy
+#theme = Mathias
+
 font-family = Monaco
 font-size = 13
+font-thicken
+
 cursor-style = block
+cursor-style-blink = false
+#cursor-color = #B62EB2
+
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
+window-width = 86
+window-height = 26
+window-colorspace = display-p3
+
 background-opacity = 0.9
 background-blur-radius = 80
 
-window-width = 86
-window-height = 28
-window-colorspace = display-p3
-font-thicken
+#macos-titlebar-style = tabs
+#macos-titlebar-proxy-icon = hidden
+split-divider-color = #222
+unfocused-split-opacity = 1
+
+shell-integration-features = no-cursor
+keybind = shift+enter=text:\n
