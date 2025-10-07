@@ -34,9 +34,6 @@ fpath=(/Users/pozafly/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 
-# bat
-# alias cat="bat"
-
 # pnpm
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 case ":$PATH:" in
