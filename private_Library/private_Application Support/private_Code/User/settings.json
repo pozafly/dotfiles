@@ -30,7 +30,7 @@
     "*.plist": "default",
     "*.tmpl": "default"
   },
-  "terminal.integrated.defaultProfile.osx": "tmux-vscode",
+  "terminal.integrated.defaultProfile.osx": "/bin/zsh (migrated)",
   "todohighlight.keywords": [
     {
       "text": "NOTE:",
@@ -51,9 +51,9 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.profiles.osx": {
-    "tmux-vscode": {
-      "path": "zsh",
-      "args": ["-lc", "tmux new-session -A -s vscode"]
+    "/bin/zsh (migrated)": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
     }
   },
   "git.autofetch": true,
@@ -153,9 +153,6 @@
     "**/src/components/**/index.tsx": "${dirname} - Component"
   },
   "errorLens.excludeBySource": ["cSpell"],
-  "tailwind-fold.autoFold": false,
-  "terminal.integrated.env.osx": {},
-  "console-ninja.featureSet": "Community",
   "cSpell.ignorePaths": [
     "package-lock.json",
     "node_modules",
