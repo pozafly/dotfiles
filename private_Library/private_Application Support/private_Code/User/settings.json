@@ -30,7 +30,7 @@
     "*.plist": "default",
     "*.tmpl": "default"
   },
-  "terminal.integrated.defaultProfile.osx": "/bin/zsh (migrated)",
+  "terminal.integrated.defaultProfile.osx": "tmux-vscode",
   "todohighlight.keywords": [
     {
       "text": "NOTE:",
@@ -51,9 +51,9 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.profiles.osx": {
-    "/bin/zsh (migrated)": {
-      "path": "/bin/zsh",
-      "args": ["-l"]
+    "tmux-vscode": {
+      "path": "zsh",
+      "args": ["-lc", "tmux new-session -A -s vscode"]
     }
   },
   "git.autofetch": true,
@@ -113,18 +113,12 @@
     "*.ts": "typescript"
   },
   "svg.preview.mode": "svg",
-  // "prettier.singleQuote": true,
   "workbench.sideBar.location": "right",
   "gitlens.views.commitDetails.files.layout": "tree",
   "scssFormatter.printWidth": 80,
   "workbench.iconTheme": "material-icon-theme",
   "editor.formatOnSave": true,
   "http.proxySupport": "off",
-  "codeium.enableConfig": {
-    "*": true,
-    "ignore": true,
-    "plaintext": true
-  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.singleQuote": true,
   "security.promptForLocalFileProtocolHandling": false,
