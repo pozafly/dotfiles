@@ -1,3 +1,6 @@
+# base dir
+ZSH_CONFIG="$HOME/.config/zsh"
+
 # homebrew path
 export PATH=/opt/homebrew/bin:$PATH
 
@@ -30,7 +33,9 @@ esac
 
 export PATH="$HOME/.local/bin:$PATH"
 
-alias ll='ls -alF'
+source "$ZSH_CONFIG/tmux.zsh"
+source "$ZSH_CONFIG/options.zsh"
+source "$ZSH_CONFIG/alias.zsh"
 
 autoload -Uz compinit
 compinit

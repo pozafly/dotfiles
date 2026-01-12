@@ -1,12 +1,1 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# tmux 자동 attach (로그인 + 인터랙티브)
-if [[ -o interactive ]] && [[ -z "$TMUX" ]]; then
-  if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-    tmux new-session -A -s vscode
-  elif [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" ]]; then
-    tmux new-session -A -s intellij
-  else
-    tmux new-session -A -s main
-  fi
-fi
