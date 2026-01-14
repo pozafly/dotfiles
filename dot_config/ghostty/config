@@ -30,3 +30,5 @@ keybind = shift+enter=text:\n
 
 scrollback-limit = 1000000
 
+# tmux prefix 설정(cmd + a)
+keybind = cmd+a=text:\x02
