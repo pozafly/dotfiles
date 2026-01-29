@@ -32,3 +32,8 @@ scrollback-limit = 1000000
 
 # tmux prefix 설정(cmd + a)
 keybind = cmd+a=text:\x02
+
+# tmux alt+좌우 pane 이동 설정
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+macos-option-as-alt = true
