@@ -31,6 +31,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# fzf
+source <(fzf --zsh)
+
 export PATH="$HOME/.local/bin:$PATH"
 
 source "$ZSH_CONFIG/tmux.zsh"
