@@ -37,3 +37,9 @@ keybind = cmd+a=text:\x02
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 macos-option-as-alt = true
+
+# cmd+d 기본 바인딩 제거
+keybind = cmd+d=unbind
+
+# cmd+d를 Alt+d(ESC + d)로 tmux에 전달
+keybind = cmd+d=text:\x1bd
