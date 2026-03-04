@@ -1,0 +1,50 @@
+{
+  "model": "opus",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message '권한 확인이 필요합니다' -appIcon ~/.claude/assets/hamster.png"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message '작업이 완료되었습니다' -appIcon ~/.claude/assets/hamster.png"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "command": "jq -c . >> ~/.claude/subagent-start.jsonl" }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "command": "jq -c . >> ~/.claude/subagent-stop.jsonl" }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "mcp__pencil"
+    ]
+  }
+}
