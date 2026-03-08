@@ -29,7 +29,6 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-eval "$(fnm env --use-on-cd --shell zsh)"
 # pnpm end
 
 # fzf
