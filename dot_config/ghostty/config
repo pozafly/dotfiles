@@ -2,9 +2,12 @@ theme = custom
 #theme = Snazzy
 #theme = Mathias
 
-font-family = Monaco
+#font-family = Monaco
+font-family = "Menlo"
+font-family = "Noto Sans Mono CJK KR"
 font-size = 13
 font-thicken
+adjust-cell-height = 6
 
 cursor-style = block
 cursor-style-blink = false
