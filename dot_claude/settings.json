@@ -1,5 +1,7 @@
 {
-  "model": "opus",
+  "permissions": {
+    "allow": []
+  },
   "hooks": {
     "Notification": [
       {
@@ -22,19 +24,14 @@
         ]
       }
     ],
-    "SubagentStart": [
-      {
-        "matcher": "*",
-        "hooks": [
-          { "type": "command", "command": "jq -c . >> ~/.claude/subagent-start.jsonl" }
-        ]
-      }
-    ],
     "SubagentStop": [
       {
-        "matcher": "*",
         "hooks": [
-          { "type": "command", "command": "jq -c . >> ~/.claude/subagent-stop.jsonl" }
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message '서브에이전트 작업이 완료되었습니다' -appIcon ~/.claude/assets/hamster.png",
+            "async": true
+          }
         ]
       }
     ]
@@ -42,9 +39,9 @@
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true
   },
-  "permissions": {
-    "allow": [
-      "mcp__pencil"
-    ]
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/scripts/context-bar.sh"
   }
 }
