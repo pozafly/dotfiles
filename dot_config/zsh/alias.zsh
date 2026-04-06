@@ -1,6 +1,3 @@
-# alias
-alias ll='ls -alF'
-
 # claude code
 alias c='claude'
 alias cc='claude --dangerously-skip-permissions'
