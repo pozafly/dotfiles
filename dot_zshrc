@@ -27,7 +27,7 @@ PURE_CMD_MAX_EXEC_TIME=0
 prompt pure
 
 # fnm
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # fastfetch
 fastfetch --logo XeroArch
