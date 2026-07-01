@@ -22,7 +22,11 @@
     "memory",
     "swap",
     "disk",
-    "localip",
+    {
+      "type": "localip",
+      "defaultRouteOnly": false
+    },
+    "publicip",
     "battery",
     "poweradapter",
     "break",
