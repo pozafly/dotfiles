@@ -31,7 +31,8 @@ ls ~/age-key.txt
 chezmoi 설치와 dotfiles 적용은 한 번에 실행한다.
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply pozafly
+export PATH="$HOME/.local/bin:$PATH"
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply pozafly
 ```
 
 이때 `GitHub email`, `GitHub name`을 한 번 물어본다. macOS에서는 `.chezmoi.os == "darwin"`으로 판별되어 macOS 전용 설정이 적용된다.
@@ -75,7 +76,8 @@ apt-get install -y curl ca-certificates
 chezmoi 설치와 dotfiles 적용은 한 번에 실행한다.
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply pozafly
+export PATH="$HOME/.local/bin:$PATH"
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply pozafly
 ```
 
 이때 `GitHub email`, `GitHub name`을 한 번 물어본다. `env` 값은 쓰지 않는다. OS 분기는 chezmoi가 자동으로 제공하는 `.chezmoi.os`만 사용한다.
@@ -111,6 +113,12 @@ command -v fastfetch
 
 ```sh
 chezmoi update
+```
+
+예전 명령으로 설치해서 `~/bin/chezmoi`에 바이너리가 생긴 상태라면, 한 번만 아래처럼 실행해도 된다.
+
+```sh
+~/bin/chezmoi update
 ```
 
 <br/>
