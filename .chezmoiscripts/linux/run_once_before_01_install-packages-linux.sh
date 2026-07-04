@@ -22,7 +22,7 @@ fi
 "${sudo_cmd[@]}" apt-get update
 
 packages=(zsh git curl ca-certificates)
-for package in btop fastfetch; do
+for package in btop fastfetch zsh-autosuggestions; do
   if apt-cache show "$package" >/dev/null 2>&1; then
     packages+=("$package")
   else
