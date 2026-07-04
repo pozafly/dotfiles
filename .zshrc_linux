@@ -1,4 +1,4 @@
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 # UTF-8 locale for terminal UIs like btop.
 case "${LANG:-}" in
