@@ -1,5 +1,13 @@
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
+# UTF-8 locale for terminal UIs like btop.
+case "${LANG:-}" in
+  ""|C|POSIX) export LANG=C.UTF-8 ;;
+esac
+case "${LC_CTYPE:-}" in
+  ""|C|POSIX) export LC_CTYPE=C.UTF-8 ;;
+esac
+
 # oh-my-zsh
 zstyle ':omz:update' mode auto
 
@@ -17,6 +25,11 @@ fi
 
 if command -v dircolors >/dev/null 2>&1; then
   eval "$(dircolors -b)"
+fi
+
+# fastfetch
+if [[ -o interactive ]] && command -v fastfetch >/dev/null 2>&1; then
+  fastfetch
 fi
 
 autoload -Uz compinit
