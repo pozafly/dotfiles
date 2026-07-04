@@ -84,18 +84,12 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply pozaf
 
 Linux에서 현재 적용되는 핵심 설정은 `~/.zshrc`, `~/.config/git`, `~/.config/btop`이다. `btop`과 `fastfetch`는 명령어를 설치한다. `fastfetch` 설정 파일은 가져가지 않고, interactive zsh가 열릴 때 기본 설정으로 실행한다.
 
-적용 스크립트는 Debian/Ubuntu 계열처럼 `apt-get`이 있는 환경에서 `zsh`, `git`, `curl`, `ca-certificates`를 설치한다. `btop`은 GitHub release의 정적 바이너리를 `/usr/local/bin`에 설치한다. `fastfetch`는 apt 저장소에 있으면 apt로 설치하고, 없으면 GitHub release의 `.deb` 파일로 설치를 시도한다. 이후 `oh-my-zsh`와 `zsh-autosuggestions`, `zsh-syntax-highlighting`을 설치한다.
+적용 스크립트는 Debian/Ubuntu 계열처럼 `apt-get`이 있는 환경에서 `zsh`, `git`, `curl`, `ca-certificates`를 설치한다. 설치 후 login shell을 zsh로 바꾼다. `btop`은 GitHub release의 정적 바이너리를 `/usr/local/bin`에 설치한다. `fastfetch`는 apt 저장소에 있으면 apt로 설치하고, 없으면 GitHub release의 `.deb` 파일로 설치를 시도한다. 이후 `oh-my-zsh`와 `zsh-autosuggestions`, `zsh-syntax-highlighting`을 설치한다.
 
-SSH로 접속했을 때 바로 zsh를 쓰려면 login shell을 바꾼다. dotfiles 적용 스크립트는 shell을 자동 변경하지 않는다.
-
-```sh
-chsh -s "$(command -v zsh)"
-```
-
-`chsh`가 없거나 root 계정에서 직접 바꿔야 하면 아래처럼 바꾼다.
+현재 SSH 세션은 자동으로 zsh로 바뀌지 않는다. 적용 후에는 SSH를 다시 접속해야 zsh가 기본 shell로 열린다. 지금 세션에서 바로 테스트하려면 아래처럼 실행한다.
 
 ```sh
-usermod -s "$(command -v zsh)" "$USER"
+exec zsh -l
 ```
 
 적용 후에는 재접속하고 확인한다.

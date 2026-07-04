@@ -159,6 +159,55 @@ install_btop_from_github() {
   rm -rf "$tmpdir"
 }
 
+set_login_shell_to_zsh() {
+  local zsh_path
+  zsh_path="$(command -v zsh || true)"
+  if [ -z "$zsh_path" ]; then
+    echo "zsh not found. Skipping login shell change."
+    return 0
+  fi
+
+  local user
+  user="${USER:-$(id -un)}"
+
+  local current_shell
+  current_shell=""
+  if command -v getent >/dev/null 2>&1; then
+    current_shell="$(getent passwd "$user" | cut -d: -f7 || true)"
+  fi
+
+  if [ "$current_shell" = "$zsh_path" ]; then
+    echo "Login shell is already zsh for $user."
+    return 0
+  fi
+
+  if [ -r /etc/shells ] && ! grep -Fxq "$zsh_path" /etc/shells; then
+    printf '%s\n' "$zsh_path" | "${sudo_cmd[@]}" tee -a /etc/shells >/dev/null
+  fi
+
+  local usermod_cmd
+  usermod_cmd=""
+  if command -v usermod >/dev/null 2>&1; then
+    usermod_cmd="$(command -v usermod)"
+  elif [ -x /usr/sbin/usermod ]; then
+    usermod_cmd="/usr/sbin/usermod"
+  fi
+
+  if [ -n "$usermod_cmd" ]; then
+    "${sudo_cmd[@]}" "$usermod_cmd" -s "$zsh_path" "$user"
+    echo "Changed login shell for $user to $zsh_path. Reconnect SSH to use it."
+    return 0
+  fi
+
+  if command -v chsh >/dev/null 2>&1; then
+    "${sudo_cmd[@]}" chsh -s "$zsh_path" "$user"
+    echo "Changed login shell for $user to $zsh_path. Reconnect SSH to use it."
+    return 0
+  fi
+
+  echo "Neither usermod nor chsh found. Skipping login shell change."
+}
+
 packages=(zsh git curl ca-certificates)
 
 install_fastfetch_after_apt=false
@@ -170,6 +219,8 @@ else
 fi
 
 "${sudo_cmd[@]}" apt-get install -y "${packages[@]}"
+
+set_login_shell_to_zsh
 
 install_btop_from_github
 
