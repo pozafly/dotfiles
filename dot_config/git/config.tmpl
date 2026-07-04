@@ -6,7 +6,11 @@
   email = {{ .chezmoi.config.data.email | quote }}
 
 [core]
+{{- if eq .chezmoi.os "darwin" }}
   editor = code --wait
+{{- else if eq .chezmoi.os "linux" }}
+  editor = vim
+{{- end }}
   precomposeunicode = true
   quotepath = false
   excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
