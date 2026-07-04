@@ -52,6 +52,7 @@ install_fastfetch_from_github() {
 
   local tmpdir release_json deb_path url
   tmpdir="$(mktemp -d)"
+  chmod 755 "$tmpdir"
   release_json="$tmpdir/fastfetch-release.json"
   deb_path="$tmpdir/fastfetch.deb"
 
@@ -73,6 +74,7 @@ install_fastfetch_from_github() {
     rm -rf "$tmpdir"
     return 0
   fi
+  chmod 644 "$deb_path"
 
   if ! "${sudo_cmd[@]}" apt-get install -y "$deb_path"; then
     echo "Failed to install fastfetch .deb. Continuing."
