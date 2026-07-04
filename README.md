@@ -34,7 +34,7 @@ chezmoi 설치와 dotfiles 적용은 한 번에 실행한다.
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply pozafly
 ```
 
-이때 `email`, `name`을 한 번 물어본다. macOS에서는 `.chezmoi.os == "darwin"`으로 판별되어 macOS 전용 설정이 적용된다.
+이때 `GitHub email`, `GitHub name`을 한 번 물어본다. macOS에서는 `.chezmoi.os == "darwin"`으로 판별되어 macOS 전용 설정이 적용된다.
 
 적용 스크립트는 Homebrew가 없으면 설치하고, `Brewfile` 기준으로 패키지와 앱을 설치한다. 이후 `oh-my-zsh`, `age`, `~/Documents/dev`, `~/.hushlogin`, `.macos` 설정을 처리한다.
 
@@ -78,7 +78,7 @@ chezmoi 설치와 dotfiles 적용은 한 번에 실행한다.
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply pozafly
 ```
 
-이때 `email`, `name`을 한 번 물어본다. `env` 값은 쓰지 않는다. OS 분기는 chezmoi가 자동으로 제공하는 `.chezmoi.os`만 사용한다.
+이때 `GitHub email`, `GitHub name`을 한 번 물어본다. `env` 값은 쓰지 않는다. OS 분기는 chezmoi가 자동으로 제공하는 `.chezmoi.os`만 사용한다.
 
 Linux에서 현재 적용되는 핵심 설정은 `~/.zshrc`, `~/.config/git`, `~/.config/btop`이다. `fastfetch`는 패키지만 설치하고 설정 파일은 가져가지 않는다.
 
@@ -165,15 +165,15 @@ chezmoi --override-data '{"chezmoi":{"os":"linux"}}' managed | sort
 .chezmoi.toml.tmpl에는 아래와 같이 적혀 있음.
 
 ```toml
-{{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $name := promptStringOnce . "name" "Name" -}}
+{{- $email := promptStringOnce . "email" "GitHub email" -}}
+{{- $name := promptStringOnce . "name" "GitHub name" -}}
 
 [data]
   email = {{ $email | quote }}
   name = {{ $name | quote }}
 ```
 
-`chezmoi init` 명령어를 치면 email과 name을 물어본다. 입력한 값은 로컬 컴퓨터의 `~/.config/chezmoi/chezmoi.toml` 파일에 저장되고, 템플릿에서 `{{ .chezmoi.config.data.name }}` 같은 값으로 사용할 수 있다.
+`chezmoi init` 명령어를 치면 GitHub email과 GitHub name을 물어본다. 입력한 값은 로컬 컴퓨터의 `~/.config/chezmoi/chezmoi.toml` 파일에 `email`, `name` 키로 저장되고, 템플릿에서 `{{ .chezmoi.config.data.name }}` 같은 값으로 사용할 수 있다.
 
 그리고 `.chezmoi.toml.tmpl` 파일을 변경했다면 `$ chezmoi init` 명령어를 통해 반드시 초기화 시켜주어야만 local의 `~/.config/chezmoi/chezmoi.toml` 파일이 변경된다.
 

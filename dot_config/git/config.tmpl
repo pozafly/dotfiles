@@ -1,9 +1,11 @@
 [alias]
   st = status
 
+{{ $name := get . "name" | default "pozafly" -}}
+{{ $email := get . "email" | default "pozafly@gmail.com" -}}
 [user]
-  name = {{ .chezmoi.config.data.name | quote }}
-  email = {{ .chezmoi.config.data.email | quote }}
+  name = {{ $name | quote }}
+  email = {{ $email | quote }}
 
 [core]
 {{- if eq .chezmoi.os "darwin" }}
