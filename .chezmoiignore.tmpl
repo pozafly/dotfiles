@@ -1,0 +1,35 @@
+README.md
+/Library/Preferences
+
+# On Linux, skip macOS-only targets.
+{{ if eq .chezmoi.os "linux" }}
+/.chezmoiscripts/darwin
+/.chezmoiscripts/darwin/**
+/.claude
+/.claude/**
+/.config/fastfetch
+/.config/fastfetch/**
+/.config/ghostty
+/.config/ghostty/**
+/.config/git
+/.config/git/**
+/.config/zsh/darwin.zsh
+/.ssh
+/.ssh/**
+/.tmux.conf
+/.zprofile
+/Brewfile
+/Documents
+/Documents/**
+/Library
+/Library/**
+/scripts
+/scripts/**
+{{ end }}
+
+# On macOS, skip Linux-only targets.
+{{ if eq .chezmoi.os "darwin" }}
+/.chezmoiscripts/linux
+/.chezmoiscripts/linux/**
+/.config/zsh/linux.zsh
+{{ end }}

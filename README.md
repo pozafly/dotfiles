@@ -22,6 +22,51 @@ brew bundle dump 명령어 (vscode 포함시키지 않음)
 
 <br/>
 
+## macOS / Linux 분기
+
+chezmoi의 자동 값인 `.chezmoi.os`를 사용해 OS별 적용 대상을 나눈다.
+
+- macOS: `.chezmoi.os == "darwin"`
+- Linux: `.chezmoi.os == "linux"`
+
+분기 기준은 `.chezmoiignore.tmpl`에 있다. 읽는 방식은 단순하다.
+
+- Linux에서는 macOS 전용 파일을 제외한다.
+- macOS에서는 Linux 전용 파일을 제외한다.
+
+예를 들어 `dot_config/zsh/linux.zsh`는 Linux 전용이다. macOS에서는 `.chezmoiignore.tmpl`에 의해 제외되므로 실제 `~/.config/zsh/linux.zsh`가 생성되지 않는다.
+
+zsh 설정은 아래 3개 파일만 보면 된다.
+
+- `dot_config/zsh/common.zsh`: macOS / Linux 공통
+- `dot_config/zsh/darwin.zsh`: macOS 전용
+- `dot_config/zsh/linux.zsh`: Linux 전용
+
+수정할 때는 source state를 먼저 수정하고 실제 파일에 적용한다. 예를 들어 macOS 전용 zsh 설정을 수정하려면:
+
+```sh
+chezmoi edit ~/.config/zsh/darwin.zsh
+chezmoi diff
+chezmoi apply
+```
+
+현재 OS에서 ignored 되는 다른 OS 전용 파일은 `chezmoi edit <target>`으로 열기 어렵다. 예를 들어 macOS에서 Linux 전용 zsh 설정을 수정하려면 source repo에서 직접 수정한다.
+
+```sh
+chezmoi cd
+code dot_config/zsh/linux.zsh
+chezmoi diff
+chezmoi apply
+```
+
+Linux 기준으로 어떤 파일이 관리되는지 macOS에서도 확인할 수 있다.
+
+```sh
+chezmoi --override-data '{"chezmoi":{"os":"linux"}}' managed | sort
+```
+
+<br/>
+
 ## 설정 파일 관리
 
 .chezmoi.toml.tmpl에는 아래와 같이 적혀 있음.
