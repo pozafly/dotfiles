@@ -26,7 +26,10 @@
       "type": "localip",
       "defaultRouteOnly": false
     },
-    "publicip",
+    {
+      "type": "publicip",
+      "timeout": 500
+    },
     "battery",
     "poweradapter",
     "break",
