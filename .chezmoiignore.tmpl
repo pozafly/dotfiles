@@ -2,27 +2,27 @@ README.md
 
 # On Linux, skip macOS-only targets.
 {{ if eq .chezmoi.os "linux" }}
-/.chezmoiscripts/darwin
-/.chezmoiscripts/darwin/**
-/.claude
-/.claude/**
-/.config/ghostty
-/.config/ghostty/**
-/.ssh
-/.ssh/**
-/.tmux.conf
-/.zprofile
-/Brewfile
-/Documents
-/Documents/**
-/Library
-/Library/**
-/scripts
-/scripts/**
+.chezmoiscripts/darwin
+.chezmoiscripts/darwin/**
+.claude
+.claude/**
+.config/ghostty
+.config/ghostty/**
+.ssh
+.ssh/**
+.tmux.conf
+.zprofile
+Brewfile
+Documents
+Documents/**
+Library
+Library/**
+scripts
+scripts/**
 {{ end }}
 
 # On macOS, skip Linux-only targets.
 {{ if eq .chezmoi.os "darwin" }}
-/.chezmoiscripts/linux
-/.chezmoiscripts/linux/**
+.chezmoiscripts/linux
+.chezmoiscripts/linux/**
 {{ end }}
